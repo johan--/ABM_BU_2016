@@ -1,0 +1,29 @@
+initial internal water content of woodlouse = 100
+external is wet = high turn ratio +1 water content per step.
+external is dry = low turn ratio -5 water content per step.
+
+if dry 
+-5 wc
+turn -
+
+if wet
++1 wc
+turn +
+
+
+modeller joke: qunat ecologist doesnt know dog from sheep, gues no of sheep in field for 1 sheep, gues job, modeller.
+
+
+
+Biological Automata:
+Is realism important in artificial life? depends what your are asking!
+What is important to your question?
+location, energy, population change, consumption, emission, time.
+
+Sensitivity Analysis:
+test how altering parameters affects the output?
+typically adjust each ~10%.
+Maybe combine several params. 
+
+
+
