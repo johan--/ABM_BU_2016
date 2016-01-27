@@ -1,0 +1,13 @@
+NETLOGO
+
+mobile agents = turtle (knows property of current patch: color, label, xcor etc relate to TURTLE)
+stationary = patches (pcolor, plabel, pxcor etc all relate to PATCH)
+
+no loops, simple syntax.
+
+Good for simple heuristic models. PAttern matching. Rapid development. 
+
+SQL style commands (turtles with, all foxes etc)
+
+Hatch, Sprout. 
+

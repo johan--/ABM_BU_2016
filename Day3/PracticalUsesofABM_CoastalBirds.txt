@@ -1,0 +1,27 @@
+Richard Stillman:
+
+Why? decision making within ABM can be limited by avaliable data.
+For example how can we say that climate change will occur beyond observed records?
+
+How do parameters affect the results of each model?
+Rather than looking at entire populations, we think of the individual and range of behaviours. 
+
+Agent Based and IBM book. 
+
+Developing, keep model as general as possible. Specificity causes issues. 
+
+UK landslide model based on NIMROD analysis and NLDB? 
+Stillman Railsbeck 2015 
+Stillman-Goss_Custard 2010
+
+
+Define relationships between input/output = response.
+For example birds feeding rate and energy gain 
+As the size of birds increases, the rate at which it consumes increase linearly, yet energy expended increases squared.
+
+Publishing models:
+	Of all models applied, this demonstrated is the best representation of observational data. 
+	
+	
+Conservation Thresholds - rules of thumb from complicated models
+	

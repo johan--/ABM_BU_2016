@@ -1,0 +1,194 @@
+---
+title: "Analysing Netlogo experiments"
+author: "Duncan Golicher"
+date: "25/01/2016"
+output: pdf_document
+---
+
+## Using behaviour space
+
+First load the fire model, found in the models library environmental folder. Play with the model to understand its behaviour. This is a simple model that only has one input parameter. This is density. We are going to evaluate the sensitivity of the model to this parameter.
+
+The result that we are interested in is the percent of the landscape burned after the fire has run its course. As it stands the model reporter on the interface calculates this, but there is no named variable called percent-burned. We need to alter this. Edit the monitor box on the interface. 
+
+![alt text](figs/fire1.png)
+
+Remove this text and replace it by percent-burned.
+
+![alt text](figs/fire2.png)
+
+Now you need to add a reporter within the code that carries out the same calculation.
+
+
+![alt text](figs/fire3.png)
+
+Now open the behaviour space tool and design an experiment. After playing with the model it becomes apparent that the critical range at which the landscape switches from being largely unburned to burned lies between densities of 50 and 65.
+
+![alt text](figs/fire4.png)
+
+## Inspecting the results
+
+The behaviour space tool produces two types of output file. The spreadsheet file attempts to summarise some of the results for you. The table output is much more useful if you intend to analyse the results in standard statistical software. 
+For example, the results from this experiment can be turned into figures using R
+
+
+```{r,echo=FALSE}
+setwd("~/Downloads/netlogo/R")
+```
+
+We need two packages for this. 
+
+```{r,message=FALSE,warning=FALSE}
+library(ggplot2)
+library(reshape)
+```
+
+The file can be read in by skipping the first 6 lines. The variable names are too long and are best changed.
+
+```{r}
+d<-read.csv("Fire experiment-table.csv",skip=6)
+names(d)<-c("run","density","step","burned")
+
+
+```
+
+As we are only really interested in the maximum ammount burned for each run we need to reshape the data.
+
+```{r}
+d1<-melt(d,m="burned")
+d2<-cast(d1,run+density~variable,max)
+```
+
+
+```{r,message=FALSE,warning=FALSE}
+g0<-ggplot(data=d2,aes(y=burned,x=density))
+g0+geom_point()+geom_smooth()
+```
+
+
+# Varying two parameters
+
+More complex experiments involve varying two or more parameters. Load the virus model and play with it to investigate its behaviour. Notice that in this model people can reproduce. This complicates the model too much as we may simply want to know how many people are left alive after a viral outbreak. So find the parameter for chance of reproduction in the setup-constants block of the code and set it to zero.  
+![alt text](figs/virus1.png)
+
+Now we can run some experiments. To simplify analysis we will only vary two parameters. The setting below allows the duration to vary between 10 and 50 and infectiousness to vary between 10 and 90 with a time limit of 100 months for the epidemic to run . 
+
+![alt text](figs/virus2.png)
+
+
+```{r}
+
+d<-read.csv("Virus experiment-table.csv",skip=6)
+head(d)
+names(d)<-c("run","duration","infect","recover","step","npeople")
+```
+
+We can look at each run using a facet grid.
+
+```{r}
+g0<-ggplot(data=d,aes(x=step,y=npeople))
+g0+geom_line()+facet_grid(infect~duration)
+```
+
+However, just as in the previous example, we are more interested in analysing just the results at the end of the model runs. We can do this again by reshaping the results. In this case we take the minimum values.
+
+
+```{r}
+library(reshape)
+d1<-melt(d,m="npeople")
+d2<-cast(d1,duration+infect~variable,min)
+```
+
+One way of looking at the results in two dimensions is to use a heat map.
+
+```{r}
+g0<- ggplot(d2, aes(duration, infect)) 
+g1 <- g0 + geom_tile(aes(fill = npeople), colour = "white")
+g1 + scale_fill_gradient(low = "white",high = "darkred")
+
+```
+
+## Running netlog from R
+
+Netlogo can be run directly from R. This can be useful for setting up more complex experiments, particularly if you want to use some of the functions in R to draw parameters from known distributions. 
+
+The first step is to start Netlogo and load the model. You need to provide the paths to these first.
+
+
+```{r,message=FALSE}
+
+library(RNetLogo)
+nl.path <- "C:/Program Files/NetLogo 5.3/app"
+NLStart(nl.path,gui=FALSE)
+model.path <- "C:/Users/bpo/Desktop/github/ABM_BU_2016/Day3/Fire_behaviour_space_edit.nlogo"
+absolute.model.path <- paste(nl.path,model.path,sep="")
+NLLoadModel("C:/Users/bpo/Desktop/github/ABM_BU_2016/Day3/Fire_behaviour_space_edit.nlogo")
+
+```
+
+Now you need to write a function to run the model and report the output.  This involves running netlogo commands from R.
+
+
+```{r}
+
+run_model<-function(density){
+NLCommand("set density ", density)
+NLCommand("setup")
+NLDoCommand(500,"go")
+NLReport("percent-burned")
+}
+
+
+```
+
+Once you have a function you can apply it to a list of parameter values.
+
+
+```{r}
+density<-45:85
+system.time(percent_burned<-sapply(density,run_model))
+d<-data.frame(density,percent_burned)
+plot(d)
+NLQuit()
+```
+
+
+## Using parallel processing
+
+You may have noticed that running netlogo from R was much slower than using the behaviour space tool. This is because by default there is no parallel processing occuring. Setting up parallel processing is slightly more complex but does speed up the time taken to run the models.
+
+```{r}
+
+require(parallel)
+# detect the number of cores available
+processors <- detectCores()
+# create cluster
+cl <- makeCluster(processors)
+# set variables for the start 
+
+prepro <- function(dummy, gui, nl.path, model.path) {
+  library(RNetLogo)
+NLStart(nl.path, gui=gui)
+NLLoadModel(model.path)
+}
+
+invisible(parLapply(cl, 1:processors, prepro, gui=FALSE,
+"C:/Program Files/NetLogo 5.3/app", "C:/Users/bpo/Desktop/github/ABM_BU_2016/Day3/Fire_behaviour_space_edit.nlogo"))
+
+```
+
+```{r}
+run_model<-function(density){
+NLCommand("set density ", density)
+NLCommand("setup")
+NLDoCommand(500,"go")
+NLReport("percent-burned")
+}
+
+density<-55:65
+system.time(percent_burned<-parSapply(cl,density,run_model))
+d<-data.frame(density,percent_burned)
+plot(d)
+stopCluster(cl)
+```
+
