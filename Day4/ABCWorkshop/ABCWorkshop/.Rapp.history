@@ -1,0 +1,1320 @@
+1.56125 / 3.1225
+asin(1/6*pi*0.5 - 0.5*pi)
+0.5 + 0.5 * pi
+2.070796 / 1.6 * pi
+asin(4.065998)
+asin(4.065998 - pi)
+heights <- sapply(seq(0, 12, 0.0001), wave)
+heights[1:5]
+submergence <- function(x, heights) {#
+	first <- min(heights[heights > x])#
+	last <- max(heights[heights > x]#
+	total <- last - first#
+	total#
+}
+submergence <- function(x, heights) {#
+	first <- min(heights[heights > x])#
+	last <- max(heights[heights > x])#
+	total <- last - first#
+	total#
+}
+x <- seq(8.41, 2.165, 0.0001)#
+#
+subm <- sapply(x, submergence, heights)
+x <- seq(8.41, 2.165, -0.0001)#
+#
+subm <- sapply(x, submergence, heights)
+heights
+min(heights)
+max(heights)
+length(X)
+length(x)
+x <- seq(8.41, 2.165, -0.0001)#
+#
+subm <- sapply(x, submergence, heights)x <- seq(8.41, 2.165, -0.0001)#
+#
+subm <- sapply(x, submergence, heights)
+submergence <- function(x, heights) {#
+	first <- min(heights[heights >= x])#
+	last <- max(heights[heights >= x])#
+	total <- last - first#
+	total#
+}
+submergence <- function(x, heights) {#
+	higher <- min(heights[heights >= x])#
+	total <- max(higher) - min(heigher)#
+	total#
+}#
+#
+x <- seq(8.41, 8, -0.0001)#
+#
+subm <- sapply(x, submergence, heights)
+submergence <- function(x, heights) {#
+	higher <- min(heights[heights >= x])#
+	total <- max(higher) - min(higher)#
+	total#
+}#
+#
+x <- seq(8.41, 8, -0.0001)#
+#
+subm <- sapply(x, submergence, heights)
+subm
+x <- seq(8.41, 2.165, -0.1)#
+#
+subm <- sapply(x, submergence, heights)
+subm
+submergence <- function(x, heights) {#
+	higher <- heights[heights >= x]#
+	total <- max(higher) - min(higher)#
+	total#
+}#
+#
+x <- seq(8.41, 2.165, -0.1)#
+#
+subm <- sapply(x, submergence, heights)
+subm
+min(x)
+submergence(2.5, heights)
+heights[heights >= 2.5]
+heights <- sapply(seq(0, 12, 0.1), wave)#
+#
+submergence <- function(x, heights) {#
+	higher <- heights[heights >= x]#
+	total <- max(higher) - min(higher)#
+	total#
+}
+heights[heights >= 2.5]
+x <- seq(0, 12, 0.1)#
+#
+heights <- sapply(x, wave)
+x <- seq(0, 12, 0.1)#
+#
+heights <- sapply(x, wave)#
+#
+submergence <- function(y, x, heights) {#
+	higher <- x[heights >= y]#
+	total <- max(higher) - min(higher)#
+	total#
+}#
+#
+y <- seq(8.41, 2.165, -0.1)#
+#
+subm <- sapply(y, submergence, x, heights)
+subm
+x <- seq(0, 12, 0.0001)#
+#
+heights <- sapply(x, wave)#
+#
+submergence <- function(y, x, heights) {#
+	higher <- x[heights >= y]#
+	total <- (max(higher) - min(higher)) * 2#
+	total#
+}#
+#
+y <- seq(8.41, 2.165, -0.0001)#
+#
+subm <- sapply(y, submergence, x, heights)
+plot(x, subm)
+plot(subm, y)
+0.39 * 0.1^3.07
+LtoM <- read.table("/Users/Elske/Google Drive/Reading/Cockles/Data/Graphs To Digitize/Length To Mass/Hancock & Franklin/LengthToMass_Hancock&Franklin1972.txt", sep = "\t", header = TRUE, col.names = c("length", "mass"))#
+	lengths <- LtoM[,1] / 10#
+	masses <- LtoM[,2]#
+	x <- seq(0.05, 3.3, by = 0.05)
+## LINEAR AFTER CONVERTING TO LOG SCALE#
+	LtoM.lm <- lm(log10(masses) ~ log10(lengths))#
+	summary(LtoM.lm)#
+	fitted.lm <- 10^predict(LtoM.lm)#
+	a.lm <- 10^LtoM.lm$coefficients[1]#
+	b.lm <- LtoM.lm$coefficients[2]
+a.lm
+a*0.1^b
+a.lm*0.1^b.lm
+a.lm
+b.lm
+a.lm*1.15b.lm
+a.lm*1.15^b.lm
+a.lm*1.5^b.lm
+a.lm*0.028^b.lm
+0.025 / 7
+1 - 0.0166445963
+calc.survivors <- function(population, daily_mortality, total.days, current.day) {#
+	odds <- runif(population)#
+	survivors <- length(odds[odds > daily_mortality])#
+#
+	if (current.day < total.days) {#
+		calc_survivors(survivors, daily_mortality, total.days, current.day + 1)#
+	} else {#
+		return(survivors);#
+	}#
+}
+calc.survivors(100, 0.00239494, 7, 1)
+calc.survivors <- function(population, daily_mortality, total.days, current.day) {#
+	odds <- runif(population)#
+	survivors <- length(odds[odds > daily_mortality])#
+#
+	if (current.day < total.days) {#
+		calc.survivors(survivors, daily_mortality, total.days, current.day + 1)#
+	} else {#
+		return(survivors);#
+	}#
+}
+calc.survivors(100, 0.00239494, 7, 1)
+calc.survivors(100, 0.01664, 1, 1)
+1 - 0.024378881
+##x[i] is covariate for data point i#
+##y[i] is response for data point i#
+##m is highest power to consider#
+##mu0 is vector of prior means for beta (of length m+1 - ith element is mean of coefficient for x^(i-1))#
+##var0 is vector of prior variances for beta (of length m+1 - ith element is variance of coefficient for x^(i-1))#
+##s2 is noise variance#
+getPosterior <- function(x, y, m, mu0, var0, s2) {#
+    ##Calculate X'X#
+    XTX <- matrix(0, nrow=m+1, ncol=m+1)#
+    for (i in seq(1,m+1)) {#
+        if (i==1) {#
+            newrow <- sapply(0:m, function(i) sum(x^i))#
+        } else {#
+            newrow <- c(newrow[-1], sum(x^(m+i-1)))#
+        }#
+        XTX[i,] <- newrow        #
+    }#
+    ##Calculate X'y#
+    XTy <- sapply(seq(0,m), function(i) sum(y*x^i))#
+    ##Calculate posterior#
+    Delta_n <- XTX + s2*diag(1/var0)#
+    mu_n <- solve(Delta_n, s2*mu0/var0+XTy)#
+    var_n <- s2*solve(Delta_n)       #
+    list(post_mean = mu_n, post_var = var_n)#
+}#
+#
+##Example run of code#
+set.seed(1)#
+N <- 10#
+x <- 1:N#
+s2 <- 1#
+y <- 3 + x + 2*x^2 + rnorm(N,0,sqrt(s2))#
+out <- getPosterior(x,y,m=2,mu0=rep(0,3),var0=rep(9,3),s2=s2)#
+#
+##Plot posteriors#
+pm <- out$post_mean#
+ps <- sqrt(diag(out$post_var)) ##Posterior standard deviations#
+par(mfrow=c(1,3))#
+for (i in 1:3) {#
+    beta_range <- pm[i] + c(-3,3)*ps[i] ##Mean +- 3 sds#
+    beta <- seq(beta_range[1], beta_range[2], length.out=100)#
+    plot(beta, dnorm(beta, pm[i], ps[i]), type='l',#
+         xlab=paste0("beta",i), ylab="Density")#
+}
+##Example run of code#
+set.seed(1)#
+N <- 10#
+x <- 1:N#
+s2 <- 1#
+y <- 3 + x + 2*x^2 + rnorm(N,0,sqrt(s2))#
+out <- getPosterior(x,y,m=2,mu0=rep(0,3),var0=rep(9,3),s2=s2)#
+#
+##Plot posteriors#
+pm <- out$post_mean#
+ps <- sqrt(diag(out$post_var)) ##Posterior standard deviations#
+par(mfrow=c(1,3))#
+for (i in 1:3) {#
+    beta_range <- pm[i] + c(-3,3)*ps[i] ##Mean +- 3 sds#
+    beta <- seq(beta_range[1], beta_range[2], length.out=100)#
+    plot(beta, dnorm(beta, pm[i], ps[i]), type='l',#
+         xlab=paste0("beta",i), ylab="Density")#
+}
+0.507 * 24
+0.707 * 23
+0.707 * 24
+source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 1)#
+	## create ten million priors#
+	priors.norm <- create.priors.norm(4e6, 3)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 1)
+#################################################################################
+##                       COMMANDS FOR MAKING THINGS GO                        ## #
+#################################################################################
+#
+if (FALSE) {#
+	source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 1)#
+	## create ten million priors#
+	priors.norm <- create.priors.norm(4e6, 3)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 1)#
+	rej.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "rejection")#
+	## calculate coverage for Wilkinson & rejection ABC#
+	wil.10.cov <- create.abcCov(wil.10.n, 200)#
+	rej.10.cov <- create.abcCov(rej.10.n, 200)#
+	## look at the posteriors#
+	plot.postDists(wil.10.n)#
+	plot.postDists(rej.10.n)	#
+}#
+#
+#################################################################################
+##               GENERATING AND PLOTTING THE POLYNOMIAL EXAMPLE               ## #
+#################################################################################
+#
+calc.polynomial <- function(coefs, x) {#
+	outcome <- coefs[1] + coefs[2] * x + coefs[3] * x^2#
+	outcome#
+}#
+#
+create.priors.norm <- function(samples, sd) {#
+	priors <- matrix(nrow = samples, ncol = 3)#
+	priors[, 1] <- rnorm(samples, 0, sd)#
+	priors[, 2] <- rnorm(samples, 0, sd)#
+	priors[, 3] <- rnorm(samples, 0, sd)#
+	rownames(priors) <- paste("sim", 1:samples, sep = "")#
+	colnames(priors) <- paste("b_", 1:3, sep = "")#
+	priors#
+}#
+#
+create.results <- function(x, priors) {#
+	results <- t(apply(priors, 1, calc.polynomial, x))#
+	results#
+}#
+#
+#################################################################################
+##                 DOING ABC - EITHER WILKINSON OR REJECTION                  ## #
+#################################################################################
+#
+create.abcEst <- function(target, priors, results, ABC, sds, factor = 1, types) {#
+    ## store the original function call so it can be viewed later#
+    call <- match.call()#
+    ## assume all results are of the same type if 'types' is missing#
+    if (missing(types)) {#
+    	types <- rep("1", ncol(results))#
+    }#
+    ## create a vector to store the mean errors for each result type #
+    mean.type.errors <- c()#
+#
+   	## calculate the error on each summary statistic for each run#
+    errors <- sweep(x = results, MARGIN = 2, STATS = target, FUN = "-")#
+    sds.to.use <- c()#
+    if (missing(sds)) {#
+    	## calculate the *squared error* on each summary statistic for each run#
+		squared.errors <- errors^2#
+#
+		## scale the squared errors by the mean squared error for each type#
+		for (i in 1:length(unique(types))) {#
+			squared.errors[, types == unique(types)[i]] <-#
+				squared.errors[, types == unique(types)[i]] /#
+				mean(squared.errors[, types == unique(types)[i]])#
+		}#
+		## sum the squared errors in order to find the run that will define#
+		## the standard deviation of the errors for each result type#
+		summed.errors <- rowSums(squared.errors)#
+		def.run <- results[summed.errors == min(summed.errors), ]#
+#
+		if (!is.vector(def.run)){#
+			def.run <- def.run[1,]#
+		}#
+		## use the best-fitting run to calculate the scaling#
+		## factors for each result type#
+		all.type.errors <- c()#
+		scaling.factors <- c()#
+#
+		for (i in 1:length(unique(types))) {#
+			type.errors <- errors[summed.errors == min(summed.errors),#
+				types == unique(types)[i]]#
+			all.type.errors <- c(all.type.errors, list(type.errors))#
+#
+			## determine the new weights of each type of result#
+			sds.to.use <- c(sds.to.use, sd(type.errors))#
+		}#
+	}  else {#
+		sds.to.use <- sds#
+	}#
+	## inflate the weights by "factor", defaults to 1#
+	weights <- sds.to.use * factor#
+	## scale the errors by the scaling factors for each result type#
+	for (i in 1:length(unique(types))) {#
+		errors[, types == unique(types)[i]] <-#
+			errors[, types == unique(types)[i]] / weights[i]#
+	}#
+#
+	## calculate the acceptance probabilities#
+	summed.errors <- rowSums(errors^2)#
+	acc.probs <- rep(FALSE, length(summed.errors))#
+	if (ABC == "rejection") {#
+		error.to.accept <- sort(summed.errors)[100]#
+		accepted <- (summed.errors <= error.to.accept)#
+		acc.probs[accepted] <- 1#
+	} else {#
+		if (ABC == "Wilkinson") {#
+			acc.probs <- dchisq(summed.errors, ncol(errors)) *#
+				summed.errors^(1 - ncol(errors) / 2)#
+			acc.probs <- acc.probs / max(acc.probs)#
+		}#
+		accepted <- sapply(acc.probs, check.abcAcc)#
+	}#
+	best.run = results[summed.errors == min(summed.errors), ]#
+#
+    ## assemble an object describing what's been done, and return it to the user#
+    outcome <- list(call = call, target = target, priors = priors,#
+    	results = results, ABC = ABC, sds = sds.to.use, factor = factor,#
+    	types = types, summed.errors = summed.errors, weights = weights,#
+    	acc.probs = acc.probs, accepted = accepted, best.run = best.run)#
+    if (missing(weights)) {#
+    	outcome$def.run = def.run#
+    	outcome$type.errors = all.type.errors#
+    }#
+    class(outcome) <- c("abcEst", "abcObject")#
+    return(outcome)#
+}#
+#
+check.abcAcc <- function(probability) {#
+	acc <- FALSE#
+	if (runif(1) < probability) {#
+		acc <- TRUE#
+	}#
+	acc#
+}#
+#
+#################################################################################
+##               DOING COVERAGE - EITHER WILKINSON OR REJECTION               ## #
+#################################################################################
+#
+create.abcCov <- function(abcObj, times) {#
+	print(paste("Calculating coverage for parameter estimation."))#
+	print(paste("Total times: ", times, "!", sep = ""))#
+#
+    ## store the original function call, so it can be viewed later#
+    call <- match.call()#
+#
+	## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = TRUE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))#
+	## create a matrix to store coverage's p-values in#
+	p.values <- matrix(data = NA, nrow = times, ncol = ncol(abcObj$priors))#
+	colnames(p.values) <- colnames(abcObj$priors)#
+    ## do ABC parameter estimation for each set of "pseudo-data"	#
+    for (i in 1:times) {#
+    	print(paste("Working on time #", i, ".", sep = ""))#
+   		## select the runs that were *not* selected to serve as pseudo-data#
+		results <- abcObj$results[-c.indexes[i], ]#
+		priors <- abcObj$priors[-c.indexes[i], ]#
+		target <- c.targets[i, ]#
+		## create the appropriate abcEst object#
+		abcEst <- create.abcEst(target, priors, results, abcObj$ABC, abcObj$sds,#
+			 abcObj$factor, abcObj$types)#
+		for (j in 1:ncol(priors)) {#
+			true.value <- abcObj$priors[c.indexes[i], j]#
+			smaller <- which(abcEst$priors[, j] <= true.value)    		#
+			p.values[i, j] <- sum(abcEst$acc.probs[smaller]) / sum(abcEst$acc.probs)#
+		}#
+    }#
+   	print(paste("Done calculating coverage for parameter estimation!"))	#
+	## assemble an object describing what's been done, and return it to the user#
+	outcome <- c(list(call = call, selected = c.indexes, targets = c.targets,#
+		p.values = p.values))#
+#
+    class(outcome) <- c("abcCov", "abcObject")#
+    return(outcome)#
+}#
+#
+#################################################################################
+##                          ADDING ERROR TO RESULTS                           ## #
+#################################################################################
+#
+## this function takes a row of model outputs and adds error to each type of #
+## result using the weights of the corresponding error distributions#
+#
+addErrs <- function(results, types, weights) {#
+	for (i in 1:length(unique(types))) {#
+		results[types == unique(types)[i]] <-#
+			results[types == unique(types)[i]] +#
+			rnorm(length(results[types == unique(types)[i]]),#
+				sd = weights[i])#
+	}#
+	results	#
+}
+source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 1)#
+	## create ten million priors#
+	priors.norm <- create.priors.norm(4e6, 3)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 1)
+abcObj <- wil.10.n
+## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = TRUE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+times <- 10
+times <- 1000
+## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = TRUE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+c.targets
+## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = TRUE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]
+noisy.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+just.noise <- sweep(noisy.targets, 2)
+## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+c.targets
+## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]
+noisy.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+just.noise <- noisy.targets - c.targets
+just.noise
+apply(just.noise, 2, sd)
+plot(density(just.noise[,1]))
+?ks.test
+ks.test(just.noise[,1], pnorm)
+ks.test(just.noise[,2], pnorm)
+ks.test(just.noise[,3], pnorm)
+ks.test(just.noise[,4], pnorm)
+plot(density(just.noise[,2]))
+plot(density(just.noise[,3]))
+plot(density(just.noise[,4]))
+times <- 1e6
+## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]
+noisy.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+just.noise <- noisy.targets
+plot(density(just.noise[,1]))
+plot(density(just.noise[,2]))
+just.noise <- noisy.targets - c.targets
+plot(density(just.noise[,1]))
+plot(density(just.noise[,2]))
+plot(density(just.noise[,3]))
+## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = TRUE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]
+noisy.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+just.noise <- noisy.targets <- c.targets
+plot(density(just.noise[,1]))
+just.noise <- noisy.targets - c.targets
+plot(density(just.noise[,1]))
+ks.test(just.noise[,1], pnorm)
+plot(density(rnorm(1e6)))
+plot(density(just.noise[,1]))
+c.targets <- abcObj$results[c.indexes, ]
+## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = TRUE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]
+noisy.targets <-  t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+just.noise <- noisy.targets <- c.targets
+plot(density(just.noise[,1]))
+noisy.targets <-  t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]
+noisy.targets <-  t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))
+just.noise <- noisy.targets - c.targets
+plot(density(just.noise[,1]))
+plot(density(just.noise[,2]))
+plot(density(just.noise[,3]))
+plot(density(just.noise[,4]))
+plot(density(just.noise[,5]))
+plot(density(just.noise[,6]))
+create.abcCov <- function(abcObj, times) {#
+	print(paste("Calculating coverage for parameter estimation."))#
+	print(paste("Total times: ", times, "!", sep = ""))#
+#
+    ## store the original function call, so it can be viewed later#
+    call <- match.call()#
+#
+	## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- 1:100#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))#
+	## create a matrix to store coverage's p-values in#
+	p.values <- matrix(data = NA, nrow = times, ncol = ncol(abcObj$priors))#
+	colnames(p.values) <- colnames(abcObj$priors)#
+    ## do ABC parameter estimation for each set of "pseudo-data"	#
+    for (i in 1:times) {#
+    	print(paste("Working on time #", i, ".", sep = ""))#
+   		## select the runs that were *not* selected to serve as pseudo-data#
+		results <- abcObj$results[-c.indexes[i], ]#
+		priors <- abcObj$priors[-c.indexes[i], ]#
+		target <- c.targets[i, ]#
+		## create the appropriate abcEst object#
+		abcEst <- create.abcEst(target, priors, results, abcObj$ABC, abcObj$sds,#
+			 abcObj$factor, abcObj$types)#
+		for (j in 1:ncol(priors)) {#
+			true.value <- abcObj$priors[c.indexes[i], j]#
+			smaller <- which(abcEst$priors[, j] <= true.value)    		#
+			p.values[i, j] <- sum(abcEst$acc.probs[smaller]) / sum(abcEst$acc.probs)#
+		}#
+    }#
+   	print(paste("Done calculating coverage for parameter estimation!"))	#
+	## assemble an object describing what's been done, and return it to the user#
+	outcome <- c(list(call = call, selected = c.indexes, targets = c.targets,#
+		p.values = p.values))#
+#
+    class(outcome) <- c("abcCov", "abcObject")#
+    return(outcome)#
+}
+#################################################################################
+##                       COMMANDS FOR MAKING THINGS GO                        ## #
+#################################################################################
+#
+if (FALSE) {#
+	source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 1)#
+	## create ten million priors#
+	priors.norm <- create.priors.norm(4e6, 3)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 1)#
+	rej.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "rejection")#
+	## calculate coverage for Wilkinson & rejection ABC#
+	wil.10.cov <- create.abcCov(wil.10.n, 200)#
+	rej.10.cov <- create.abcCov(rej.10.n, 200)#
+	## look at the posteriors#
+	plot.postDists(wil.10.n)#
+	plot.postDists(rej.10.n)	#
+}#
+#
+#################################################################################
+##               GENERATING AND PLOTTING THE POLYNOMIAL EXAMPLE               ## #
+#################################################################################
+#
+calc.polynomial <- function(coefs, x) {#
+	outcome <- coefs[1] + coefs[2] * x + coefs[3] * x^2#
+	outcome#
+}#
+#
+create.priors.norm <- function(samples, sd) {#
+	priors <- matrix(nrow = samples, ncol = 3)#
+	priors[, 1] <- rnorm(samples, 0, sd)#
+	priors[, 2] <- rnorm(samples, 0, sd)#
+	priors[, 3] <- rnorm(samples, 0, sd)#
+	rownames(priors) <- paste("sim", 1:samples, sep = "")#
+	colnames(priors) <- paste("b_", 1:3, sep = "")#
+	priors#
+}#
+#
+create.results <- function(x, priors) {#
+	results <- t(apply(priors, 1, calc.polynomial, x))#
+	results#
+}#
+#
+#################################################################################
+##                 DOING ABC - EITHER WILKINSON OR REJECTION                  ## #
+#################################################################################
+#
+create.abcEst <- function(target, priors, results, ABC, sds, factor = 1, types) {#
+    ## store the original function call so it can be viewed later#
+    call <- match.call()#
+    ## assume all results are of the same type if 'types' is missing#
+    if (missing(types)) {#
+    	types <- rep("1", ncol(results))#
+    }#
+    ## create a vector to store the mean errors for each result type #
+    mean.type.errors <- c()#
+#
+   	## calculate the error on each summary statistic for each run#
+    errors <- sweep(x = results, MARGIN = 2, STATS = target, FUN = "-")#
+    sds.to.use <- c()#
+    if (missing(sds)) {#
+    	## calculate the *squared error* on each summary statistic for each run#
+		squared.errors <- errors^2#
+#
+		## scale the squared errors by the mean squared error for each type#
+		for (i in 1:length(unique(types))) {#
+			squared.errors[, types == unique(types)[i]] <-#
+				squared.errors[, types == unique(types)[i]] /#
+				mean(squared.errors[, types == unique(types)[i]])#
+		}#
+		## sum the squared errors in order to find the run that will define#
+		## the standard deviation of the errors for each result type#
+		summed.errors <- rowSums(squared.errors)#
+		def.run <- results[summed.errors == min(summed.errors), ]#
+#
+		if (!is.vector(def.run)){#
+			def.run <- def.run[1,]#
+		}#
+		## use the best-fitting run to calculate the scaling#
+		## factors for each result type#
+		all.type.errors <- c()#
+		scaling.factors <- c()#
+#
+		for (i in 1:length(unique(types))) {#
+			type.errors <- errors[summed.errors == min(summed.errors),#
+				types == unique(types)[i]]#
+			all.type.errors <- c(all.type.errors, list(type.errors))#
+#
+			## determine the new weights of each type of result#
+			sds.to.use <- c(sds.to.use, sd(type.errors))#
+		}#
+	}  else {#
+		sds.to.use <- sds#
+	}#
+	## inflate the weights by "factor", defaults to 1#
+	weights <- sds.to.use * factor#
+	## scale the errors by the scaling factors for each result type#
+	for (i in 1:length(unique(types))) {#
+		errors[, types == unique(types)[i]] <-#
+			errors[, types == unique(types)[i]] / weights[i]#
+	}#
+#
+	## calculate the acceptance probabilities#
+	summed.errors <- rowSums(errors^2)#
+	acc.probs <- rep(FALSE, length(summed.errors))#
+	if (ABC == "rejection") {#
+		error.to.accept <- sort(summed.errors)[100]#
+		accepted <- (summed.errors <= error.to.accept)#
+		acc.probs[accepted] <- 1#
+	} else {#
+		if (ABC == "Wilkinson") {#
+			acc.probs <- dchisq(summed.errors, ncol(errors)) *#
+				summed.errors^(1 - ncol(errors) / 2)#
+			acc.probs <- acc.probs / max(acc.probs)#
+		}#
+		accepted <- sapply(acc.probs, check.abcAcc)#
+	}#
+	best.run = results[summed.errors == min(summed.errors), ]#
+#
+    ## assemble an object describing what's been done, and return it to the user#
+    outcome <- list(call = call, target = target, priors = priors,#
+    	results = results, ABC = ABC, sds = sds.to.use, factor = factor,#
+    	types = types, summed.errors = summed.errors, weights = weights,#
+    	acc.probs = acc.probs, accepted = accepted, best.run = best.run)#
+    if (missing(weights)) {#
+    	outcome$def.run = def.run#
+    	outcome$type.errors = all.type.errors#
+    }#
+    class(outcome) <- c("abcEst", "abcObject")#
+    return(outcome)#
+}#
+#
+check.abcAcc <- function(probability) {#
+	acc <- FALSE#
+	if (runif(1) < probability) {#
+		acc <- TRUE#
+	}#
+	acc#
+}#
+#
+#################################################################################
+##               DOING COVERAGE - EITHER WILKINSON OR REJECTION               ## #
+#################################################################################
+#
+create.abcCov <- function(abcObj, times) {#
+	print(paste("Calculating coverage for parameter estimation."))#
+	print(paste("Total times: ", times, "!", sep = ""))#
+#
+    ## store the original function call, so it can be viewed later#
+    call <- match.call()#
+#
+	## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- 1:100#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))#
+	## create a matrix to store coverage's p-values in#
+	p.values <- matrix(data = NA, nrow = times, ncol = ncol(abcObj$priors))#
+	colnames(p.values) <- colnames(abcObj$priors)#
+    ## do ABC parameter estimation for each set of "pseudo-data"	#
+    for (i in 1:times) {#
+    	print(paste("Working on time #", i, ".", sep = ""))#
+   		## select the runs that were *not* selected to serve as pseudo-data#
+		results <- abcObj$results[-c.indexes[i], ]#
+		priors <- abcObj$priors[-c.indexes[i], ]#
+		target <- c.targets[i, ]#
+		## create the appropriate abcEst object#
+		abcEst <- create.abcEst(target, priors, results, abcObj$ABC, abcObj$sds,#
+			 abcObj$factor, abcObj$types)#
+		for (j in 1:ncol(priors)) {#
+			true.value <- abcObj$priors[c.indexes[i], j]#
+			smaller <- which(abcEst$priors[, j] <= true.value)    		#
+			p.values[i, j] <- sum(abcEst$acc.probs[smaller]) / sum(abcEst$acc.probs)#
+		}#
+    }#
+   	print(paste("Done calculating coverage for parameter estimation!"))	#
+	## assemble an object describing what's been done, and return it to the user#
+	outcome <- c(list(call = call, selected = c.indexes, targets = c.targets,#
+		p.values = p.values))#
+#
+    class(outcome) <- c("abcCov", "abcObject")#
+    return(outcome)#
+}#
+#
+#################################################################################
+##                          ADDING ERROR TO RESULTS                           ## #
+#################################################################################
+#
+## this function takes a row of model outputs and adds error to each type of #
+## result using the weights of the corresponding error distributions#
+#
+addErrs <- function(results, types, weights) {#
+	for (i in 1:length(unique(types))) {#
+		results[types == unique(types)[i]] <-#
+			results[types == unique(types)[i]] +#
+			rnorm(length(results[types == unique(types)[i]]),#
+				sd = weights[i])#
+	}#
+	results	#
+}
+source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 1)#
+	## create ten million priors#
+	priors.norm <- create.priors.norm(4e6, 3)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 1)#
+	rej.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "rejection")#
+	## calculate coverage for Wilkinson & rejection ABC#
+	wil.10.cov <- create.abcCov(wil.10.n, 200)
+abcObj <- wil.10.cov
+abcObj <- wil.10.n
+times <- 200
+## select a subset of runs to use as "pseudo-data" for coverage, according#
+	## to their original aceptance probabilities#
+	c.indexes <- sample.int(nrow(abcObj$priors), times, replace = FALSE,#
+		prob = abcObj$acc.probs)#
+	## store the runs used as "pseudo-data"#
+    c.targets <- abcObj$results[c.indexes, ]#
+    ## add error to the "pseudo-data" according to the abcObject's error distributions#
+    c.targets <- t(apply(c.targets, 1, addErrs, abcObj$types, abcObj$sds))#
+	## create a matrix to store coverage's p-values in#
+	p.values <- matrix(data = NA, nrow = times, ncol = ncol(abcObj$priors))#
+	colnames(p.values) <- colnames(abcObj$priors)
+i <- 1
+## select the runs that were *not* selected to serve as pseudo-data#
+		results <- abcObj$results[-c.indexes[i], ]#
+		priors <- abcObj$priors[-c.indexes[i], ]#
+		target <- c.targets[i, ]#
+		## create the appropriate abcEst object#
+		abcEst <- create.abcEst(target, priors, results, abcObj$ABC, abcObj$sds,#
+			 abcObj$factor, abcObj$types)
+j <- 1
+true.value <- abcObj$priors[c.indexes[i], j]
+true.value
+abcObj$priors[c.targets[i], j]
+i
+abcObj$priors[c.indexes[i], j]
+smaller <- which(abcEst$priors[, j] <= true.value)
+abcEst$priors[1:100, j]
+smaller
+smaller[1:100]
+abcEst$priors[1:100]
+abcEst$priors[1:100, j]
+abcEst$priors[1:10, j]
+smaller[1:10]
+smaller[1:11]
+abcEst$priors[1:15, j]
+abcEst$acc.probs[smaller]
+length(acc.probs[acc.probs == 0])
+length(abcEst$acc.probs[abcEst$acc.probs == 0])
+length(abcEst$acc.probs)
+(3830161 / 3999999)
+length(abcEst$acc.probs[abcEst$acc.probs == 1])
+0.97 * 4e6
+sum(abcEst$acc.probs)
+?.Machine
+.Machine
+2.225074e-307 * 3e6
+true.value
+smaller <- which(abcEst$priors[, j] <= true.value)    		#
+which(abcEst$priors[abcEst$accepted, j] <= true.value)
+which(abcEst$priors[abcEst$accepted, j] <= true.value)
+length(which(abcEst$priors[abcEst$accepted, j] <= true.value))
+abcEst$priors[abcEst$accepted, j]
+sum(abcEst$accepted)
+length(smaller)
+smaller <- which(abcEst$priors[abcEst$accepted, j] <= true.value)
+length(smaller)
+smaller <- which(abcEst$priors[abcEst$accepted, j] <= true.value)    		#
+			p.values[i, j] <- length(smaller) / sum(abcEst$accepted)
+p.values
+length(smaller) / sum(abcEst$accepted)
+smaller <- which(abcEst$priors[, j] <= true.value)
+sum(abcEst$acc.probs[smaller]) / sum(abcEst$acc.probs)
+?order
+285 / 7
+0.7 * 7
+2600 / 21
+135 / 7
+for (i in 3) {#
+	print i;#
+}
+for (i in 3) {#
+	show i#
+}
+test <- function() {#
+	for (i in 3) {#
+		show i#
+	}#
+}
+?show
+test <- function() {#
+	for (i in 3) {#
+		show(i)#
+	}#
+}
+test()
+41500 / 12
+220000 + 8000 + 5000
+7.2 / 150
+536.76 + 343.58
+250000 - 206.453
+(1800 + 3200 + 280 + 67 + 60) / 5400
+(1800 + 3200 + 280) / 5400
+(3800 + 5000 + 540) / 9800
+369 + 289
+206453 - 14000 - 4000 - 5000
+25000 - 206453 - 14000 - 4000 - 5000
+250000 - 206453 - 14000 - 4000 - 5000
+20547 / 3
+206453 + 6.000 + 14000 + 20547 + 4000 + 5000
+206453 + 6000 + 14000 + 20547 + 4000 + 5000
+206453 + 6000 + 14000 +  14547 + 4000 + 5000
+65842 + 6000 + 7000 + 4849 + 2000
+68804 + 7000  4849 + 3000
+68804 + 7000 + 4849 + 3000
+71807 + 4849 + 4000
+85691 + 83653 + 80656
+(867 * 2) / 3932
+250000 - 206453 - 6000 - 16000 - 1000 - 15000
+250000 - 206453 - 6000 - 16000 - 1000 - 7500
+13047 / 3
+65842 + 6000 + 8000 + 4349 + 2500
+68804 + 8000 + 500 + 4349 + 2500
+71807 + 500 + 4349 + 2500
+86691 + 84153 + 79156
+65842 + 6000 + 8000 + 4849 + 2500 + 2000
+65842 + 6000 + 8000 + 4849 + 2000
+68804 + 8000 + 500 + 8500 + 4849 + 2000
+68804 + 8500 + 4849 + 2000
+71807 + 500 + 4849 + 2000
+4849 * 3
+0.4 * 8
+18 * 0.4
+46.5 + 7.2 / 12
+46.5 + 7.2
+53.7 / 12
+16 / 58
+citation()
+718 + 116 + 482 + 65
+7.3 * 150
+1095 / 8
+load("/Users/Elske/Google Drive/Reading/Errors/Results/Dennis ABC/Comparing to Bayesian Regression/Fixed/wilkinson_ABC.RDS")
+source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+#
+        ##NB TO GET THIS TO RUN ON MY PC I'VE CHANGED THE NUMBER OF ABC SIMULATIONS FROM 10 MILLION TO ONE MILLION AND THE ERROR STANDARD DEVIATION FROM 1 TO 2 - DENNIS#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 2)#
+	## create one million priors#
+	priors.norm <- create.priors.norm(1e6)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 2)#
+	rej.10.n <- create.abcEst(wil.10.n$target, wil.10.n$priors, wil.10.n$results, "rejection", sds = 2)
+#################################################################################
+##                       COMMANDS FOR MAKING THINGS GO                        ## #
+#################################################################################
+#
+if (FALSE) {#
+	source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+#
+        ##NB TO GET THIS TO RUN ON MY PC I'VE CHANGED THE NUMBER OF ABC SIMULATIONS FROM 10 MILLION TO ONE MILLION AND THE ERROR STANDARD DEVIATION FROM 1 TO 2 - DENNIS#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 2)#
+	## create one million priors#
+	priors.norm <- create.priors.norm(1e6)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 2)#
+	rej.10.n <- create.abcEst(wil.10.n$target, wil.10.n$priors, wil.10.n$results, "rejection", sds = 2)#
+	## look at the posteriors#
+	plot.postDists(wil.10.n)#
+	plot.postDists(rej.10.n)#
+	## perform coverage test and plot results#
+    cov.out <- create.abcCov(wil.10.n, 100)#
+    par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])#
+}#
+#
+#################################################################################
+##               GENERATING AND PLOTTING THE POLYNOMIAL EXAMPLE               ## #
+#################################################################################
+#
+calc.polynomial <- function(coefs, x) {#
+	outcome <- coefs[1] + coefs[2] * x + coefs[3] * x^2#
+	outcome#
+}#
+#
+create.priors.norm <- function(samples) {#
+	priors <- matrix(nrow = samples, ncol = 3)#
+	priors[, 1] <- rnorm(samples, 0, 3)#
+	priors[, 2] <- rnorm(samples, 0, 3)#
+	priors[, 3] <- rnorm(samples, 0, 3)#
+	rownames(priors) <- paste("sim", 1:samples, sep = "")#
+	colnames(priors) <- paste("b_", 1:3, sep = "")#
+	priors#
+}#
+#
+create.results <- function(x, priors) {#
+	results <- t(apply(priors, 1, calc.polynomial, x))#
+	results#
+}#
+#
+#################################################################################
+##                 DOING ABC - EITHER WILKINSON OR REJECTION                  ## #
+#################################################################################
+#
+create.abcEst <- function(target, priors, results, ABC, sds, factor = 1, types) {#
+    ## store the original function call so it can be viewed later#
+    call <- match.call()#
+    ## assume all results are of the same type if 'types' is missing#
+    if (missing(types)) {#
+    	types <- rep("1", ncol(results))#
+    }#
+    ## create a vector to store the mean errors for each result type #
+    mean.type.errors <- c()#
+#
+   	## calculate the error on each summary statistic for each run#
+    errors <- sweep(x = results, MARGIN = 2, STATS = target, FUN = "-")#
+    sds.to.use <- c()#
+    if (missing(sds)) {#
+    		## calculate the *squared error* on each summary statistic for each run#
+		squared.errors <- errors^2#
+#
+		## scale the squared errors by the mean squared error for each type#
+		for (i in 1:length(unique(types))) {#
+			squared.errors[, types == unique(types)[i]] <-#
+				squared.errors[, types == unique(types)[i]] /#
+				mean(squared.errors[, types == unique(types)[i]])#
+		}#
+		## sum the squared errors in order to find the run that will define#
+		## the standard deviation of the errors for each result type#
+		summed.errors <- rowSums(squared.errors)#
+		def.run <- results[summed.errors == min(summed.errors), ]#
+#
+		if (!is.vector(def.run)){#
+			def.run <- def.run[1,]#
+		}#
+		## use the best-fitting run to calculate the scaling#
+		## factors for each result type#
+		all.type.errors <- c()#
+		scaling.factors <- c()#
+#
+		for (i in 1:length(unique(types))) {#
+			type.errors <- errors[summed.errors == min(summed.errors),#
+				types == unique(types)[i]]#
+			all.type.errors <- c(all.type.errors, list(type.errors))#
+#
+			## determine the new weights of each type of result#
+			sds.to.use <- c(sds.to.use, sd(type.errors))#
+		}#
+	}  else {#
+		sds.to.use <- sds#
+	}#
+	## inflate the weights by "factor", defaults to 1#
+	weights <- sds.to.use * factor#
+	## scale the errors by the scaling factors for each result type#
+	for (i in 1:length(unique(types))) {#
+		errors[, types == unique(types)[i]] <-#
+			errors[, types == unique(types)[i]] / weights[i]#
+	}#
+#
+	## calculate the acceptance probabilities#
+	summed.errors <- rowSums(errors^2)#
+	acc.probs <- rep(FALSE, length(summed.errors))#
+	if (ABC == "rejection") {#
+		error.to.accept <- sort(summed.errors)[100]#
+		accepted <- (summed.errors <= error.to.accept)#
+		acc.probs[accepted] <- 1#
+	} else {#
+		if (ABC == "Wilkinson") {#
+			acc.probs <- dchisq(summed.errors, ncol(errors)) *#
+				summed.errors^(1 - ncol(errors) / 2)#
+			acc.probs <- acc.probs / max(acc.probs)#
+		}#
+		accepted <- sapply(acc.probs, check.abcAcc)#
+	}#
+	best.run = results[summed.errors == min(summed.errors), ]#
+#
+    ## assemble an object describing what's been done, and return it to the user#
+    outcome <- list(call = call, target = target, priors = priors,#
+    	results = results, ABC = ABC, sds = sds.to.use, factor = factor,#
+    	types = types, summed.errors = summed.errors, weights = weights,#
+    	acc.probs = acc.probs, accepted = accepted, best.run = best.run)#
+    if (missing(weights)) {#
+    	outcome$def.run = def.run#
+    	outcome$type.errors = all.type.errors#
+    }#
+    class(outcome) <- c("abcEst", "abcObject")#
+    return(outcome)#
+}#
+#
+check.abcAcc <- function(probability) {#
+	acc <- FALSE#
+	if (runif(1) < probability) {#
+		acc <- TRUE#
+	}#
+	acc#
+}#
+#
+#################################################################################
+##               DOING COVERAGE - EITHER WILKINSON OR REJECTION               ## #
+#################################################################################
+#
+create.abcCov <- function(abcObj, times) {#
+    print(paste("Calculating coverage for parameter estimation."))#
+    print(paste("Total times: ", times, "!", sep = ""))#
+    ## store the original function call, so it can be viewed later#
+    call <- match.call()#
+#
+    ## add error to all simulator output according to the abcObject's error distributions#
+    c.results <- t(apply(abcObj$results, 1, addErrs, abcObj$types, abcObj$sds))#
+    ## select best fitting cases to use as "pseudo-data"#
+    ##NB MY DISTANCE CALCULATION ASSUMES ALL DATA VALUES ARE WEIGHTED EQUALLY. YOU MIGHT WANT TO CHANGE THIS FOR THE CASE WHERE THE DATA FALL INTO SEVERAL GROUPS - DENNIS#
+    c.distances <- apply(c.results, 1, function(x) sum((x-abcObj$target)^2))#
+    c.indexes <- order(c.distances)[1:times]#
+    c.targets <- c.results[c.indexes, ]#
+    ## create a matrix to store coverage's p-values in#
+    p.values <- matrix(data = NA, nrow = times, ncol = ncol(abcObj$priors))#
+    colnames(p.values) <- colnames(abcObj$priors)#
+    ## do ABC parameter estimation for each set of "pseudo-data"	#
+    for (i in 1:times) {#
+        print(paste("Working on time #", i, ".", sep = ""))#
+        ## select the runs that were *not* selected to serve as pseudo-data#
+        results <- abcObj$results[-c.indexes[i], ]#
+        priors <- abcObj$priors[-c.indexes[i], ]#
+        target <- c.targets[i, ]#
+        ## create the appropriate abcEst object#
+        abcEst <- create.abcEst(target, priors, results, abcObj$ABC, abcObj$sds,#
+                                abcObj$factor, abcObj$types)#
+        for (j in 1:ncol(priors)) {#
+            true.value <- abcObj$priors[c.indexes[i], j]#
+            smaller <- which(abcEst$priors[, j] <= true.value)    		#
+            p.values[i, j] <- sum(abcEst$acc.probs[smaller]) / sum(abcEst$acc.probs)#
+        }#
+    }#
+    print(paste("Done calculating coverage for parameter estimation!"))	#
+    ## assemble an object describing what's been done, and return it to the user#
+    outcome <- c(list(call = call, selected = c.indexes, targets = c.targets,#
+                      p.values = p.values))#
+    class(outcome) <- c("abcCov", "abcObject")#
+    return(outcome)#
+}#
+#
+#################################################################################
+##                          ADDING ERROR TO RESULTS                           ## #
+#################################################################################
+#
+## this function takes a row of model outputs and adds error to each type of #
+## result using the weights of the corresponding error distributions#
+#
+addErrs <- function(results, types, weights) {#
+	for (i in 1:length(unique(types))) {#
+		results[types == unique(types)[i]] <-#
+			results[types == unique(types)[i]] +#
+			rnorm(length(results[types == unique(types)[i]]),#
+				sd = weights[i])#
+	}#
+	results	#
+}
+source("~/Gitbucket/Errors/src/R/NewDennis_Extra.R")#
+	set.seed(2)#
+#
+        ##NB TO GET THIS TO RUN ON MY PC I'VE CHANGED THE NUMBER OF ABC SIMULATIONS FROM 10 MILLION TO ONE MILLION AND THE ERROR STANDARD DEVIATION FROM 1 TO 2 - DENNIS#
+	## initialising the priors and target#
+	coefs <- c(3, 1, 2) #
+	## results and analyses for 10 summary statistics#
+	x.10 <-  seq(1, 10, by = 1)#
+	true.10 <- calc.polynomial(coefs, x.10)#
+	target.10 <- true.10 + rnorm(length(x.10), 0, 2)#
+	## create one million priors#
+	priors.norm <- create.priors.norm(1e6)#
+	results.10.n <- create.results(x.10, priors.norm)#
+#
+	## do Wilkinson & rejection ABC#
+	wil.10.n <- create.abcEst(target.10, priors.norm, results.10.n, "Wilkinson", sds = 2)#
+	rej.10.n <- create.abcEst(wil.10.n$target, wil.10.n$priors, wil.10.n$results, "rejection", sds = 2)
+plot.postDists(wil.10.n)#
+	plot.postDists(rej.10.n)
+cov.out <- create.abcCov(wil.10.n, 100)#
+    par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])
+cov.out.rej <- create.abcCov(rej.10.n, 100)#
+    par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out.rej$p.values[,i])
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])
+plot.postDists(wil.10.n)#
+	plot.postDists(rej.10.n)
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out.rej$p.values[,i])
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])
+quartz()
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out.rej$p.values[,i])
+par(mfrow=c(1,3))#
+    for (i in 1:3) hist(cov.out$p.values[,i])
+plot.postDists(wil.10.n)#
+	plot.postDists(rej.10.n)
+## this script contains the full set of R commands suggested in the worksheet#
+## for the 'Parameterisation & ABC Workshop'#
+#
+## if it is loaded using 'source', all functions will be available and the plots#
+## suggested plots will be drawn, but no other output will be visible;#
+## instead, it is suggested to manually copy the instructions into the R console#
+#
+#################################################################################
+##             Commands for Step 1: Finding 95% Credible Intervals            ## #
+#################################################################################
+#
+setwd("/Users/Elske/Desktop/ABCWorkshop")#
+#
+all.data <- read.table("Inputs/all_data.txt", header = TRUE)#
+#
+full.priors <- read.table("Results/full_priors.txt", header = TRUE,#
+    stringsAsFactors = FALSE)#
+full.results <- read.table("Results/full_results.txt", header = TRUE,#
+    stringsAsFactors = FALSE)#
+#
+head(full.priors)#
+head(full.results)#
+#
+source("Code/R/ParameterEstimation.R")#
+#
+full.abcEst <- create.abcEst(target = all.data, priors = full.priors,#
+    results = full.results, rate = 0.001)#
+#
+summary(full.abcEst)#
+plot(full.abcEst)#
+#
+#################################################################################
+##                    Commands for Step 2: Model Selection                    ###
+#################################################################################
+#
+simple.priors <- read.table("Results/simple_priors.txt", header = TRUE,#
+    stringsAsFactors = FALSE)#
+simple.results <- read.table("Results/simple_results.txt", header = TRUE,#
+    stringsAsFactors = FALSE)#
+#
+source("Code/R/ModelSelection.R")#
+#
+all.indexes <- c(full.priors[,1], simple.priors[,1])#
+all.results <- rbind(full.results, simple.results)#
+#
+both.abcSel <- create.abcSel(target = all.data, indexes = all.indexes,#
+    results = all.results, rate = 0.001)#
+col.e1 <- c(1:27)col.e2 <- c(28:46)#
+e1.abcSel <- create.abcSel(target = all.data[ , col.e1], indexes = all.indexes,#
+    results = all.results[ , col.e1], rate = 0.001)#
+e2.abcSel <- create.abcSel(target = all.data[ , col.e2], indexes = all.indexes,#
+    results = all.results[ , col.e2], rate = 0.001)#
+#
+summary(both.abcSel)#
+summary(e1.abcSel)#
+summary(e2.abcSel)#
+#
+#################################################################################
+##                   Commands for Step 3: Posterior Checking                  ###
+#################################################################################
+#
+source("Code/R/PosteriorPlotting.R")#
+#
+plot.postCheck(full.abcEst, draws = 100, rerun = FALSE)#
+#
+## after this point in the practical, scripts require adjusting to your local#
+## setup to run; please see the worksheet#
+#
+## this code was distributed during the 'Parameterisation & ABC Workshop',#
+## organised at the University of Bournemouth during a NERC course on#
+## 'Agent-Based Modelling', 25th - 29th January 2016.#
+#
+## based on van der Vaart, Beaumont, Johnston & Sibly, 2015,#
+##      Ecological Modelling, 312, 180 - 190.#
+#
+## code inspired by the R package 'abc':#
+## Csillery, Francois & Blum, 2012,#
+##      Methods in Ecology and Evolution, 3, 475 - 479.#
+#
+## please use freely, but attribute!#
+## Elske van der Vaart (elskevdv@gmail.com), University of Reading

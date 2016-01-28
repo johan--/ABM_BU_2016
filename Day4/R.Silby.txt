@@ -1,0 +1,54 @@
+Richard Silby
+abcibm.com
+
+Approx bayes computation ABC
+identify problems
+solve them
+
+ANOVA 
+BAYES can test the significance of anova. 
+
+Parameter values that perform well have a normal distribution.
+
+Refs:
+van der Vaart Johnston Silby 2015 
+Beamont 2010 ABC in evolution & ecology
+
+PARAMETER ESTIMATION:
+1. define prior distributions. Probability of parameter value x . A distribution and std
+
+2. run model selecting n random samples from prior
+
+3. accept n best fitting models
+
+4. examine posterior distribution from each n best fitting models
+
+GOODNESS OF FIT:
+least squares between observed data and modelled data
+	
+	for o,m in observed, model
+		cost = square differences o,m
+
+sum of costs = model fit
+
+We must weight parameters if they are different. 
+		Weighting parameters? is this normalisation?
+		Normalisation is a potential 0-1. The issue can be if you have parameters with vastly different means and std. Experiment . 
+		
+Bayesian's = standard error = credibility interval.
+
+Can include the standard deviation as a parameter to test the uncertainty of the underlying data set. 
+Ie if you are aware that your data is limited to a narrow range of years for ex.
+
+Parameter Correlation:
+Narrowing posterior distributions indicate better fit. 
+If there is a direct relationship between parameter pairs; this may be misleading in thinking that parameters are not causal if they do not narrow. 
+HOWEVER if pairs of correlations exists, a parameter which narrows the posterior and one which does not, if they are correlated perhaps these are both important.
+IF correlated, remove one of them and test. Either could be responsible. Discuss correlation, is it causality?
+
+Bayes Factor Table?
+Ratio of model success : model failure
+1-20 = positive evidence
+
+Elske van der Vaart:
+ 
